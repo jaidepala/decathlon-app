@@ -1,5 +1,11 @@
 {
 	"APP": {
 		"NAME": "Decathlon"
+	},
+	"DRAWER": {
+		"MENU": "Menu",
+		"TOGGLE_NAVIGATION": "Toggle Navigation",
+		"LOGIN": "Login",
+		"HOME": "Home"
 	}
 }

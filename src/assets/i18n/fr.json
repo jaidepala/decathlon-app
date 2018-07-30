@@ -1,5 +1,11 @@
 {
 	"APP": {
 		"NAME": "Décathlon"
+	},
+	"DRAWER": {
+		"MENU": "Menu",
+		"TOGGLE_NAVIGATION": "Basculer la navigation",
+		"LOGIN": "S'identifier",
+		"HOME": "Maison"
 	}
 }
