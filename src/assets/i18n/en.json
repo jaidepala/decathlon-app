@@ -6,7 +6,11 @@
 		"ENTER_USERNAME": "Enter Username",
 		"ENTER_PASSWORD": "Enter Password",
 		"USERNAME": "Username",
-		"PASSWORD": "Password"
+		"PASSWORD": "Password",
+		"NO_USERNAME": "Please enter username",
+		"NO_PASSWORD": "Please enter password",
+		"CLOSE": "Close",
+		"DONE": "Done"
 	},
 	"DRAWER": {
 		"MENU": "Menu",

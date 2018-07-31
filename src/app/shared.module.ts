@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogModule } from '@angular/material';
+import { MatSnackBarModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material';
 
 import { FormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ import { ApiService } from './services/api.service';
         CommonModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        MatSnackBarModule,
         TranslateModule
     ],
     declarations: [
@@ -34,6 +36,7 @@ import { ApiService } from './services/api.service';
         CommonModule,
         MatDialogModule,
         MatProgressSpinnerModule,
+        MatSnackBarModule,
         FormsModule,
         TranslateModule
     ],

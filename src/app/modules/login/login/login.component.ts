@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatSnackBar } from '@angular/material';
 import { OverlaySpinnerComponent } from '../../../components/overlay-spinner/overlay-spinner.component';
+import { Router } from '@angular/router';
 
 import { ApiService } from '../../../services/api.service';
 
@@ -24,7 +26,9 @@ export class LoginComponent implements OnInit {
   	constructor(
   		private translate: TranslateService,
   		private matDialog: MatDialog,
-  		private api: ApiService
+  		private api: ApiService,
+  		private router: Router,
+  		private snackBar: MatSnackBar
 	) {
 		
 	}
@@ -32,7 +36,34 @@ export class LoginComponent implements OnInit {
 	ngOnInit() {
 	}
 
+	openSnackBar(message: string, action: string) {
+		this.snackBar.open(message, action, {
+			duration: 2000,
+		});
+	}
+
 	signIn() {
+
+		if(!this.login.username || !this.login.password)
+		{
+			this.translate.get(['LOGIN']).subscribe(translation => {
+				
+				var msg = '';
+
+				if( !this.login.username )
+				{
+					msg  = translation.LOGIN.NO_USERNAME;
+				}
+				else if( !this.login.password )
+				{
+					msg  = translation.LOGIN.NO_PASSWORD;
+				}
+
+				this.openSnackBar(msg, translation.LOGIN.DONE);
+			});
+
+			return false;
+		}		
 
 		this.dialog = this.matDialog.open(OverlaySpinnerComponent, { 
 			id: 'OverlaySpinnerComponent', disableClose: true 
@@ -48,6 +79,8 @@ export class LoginComponent implements OnInit {
 			console.log('result', result);
 
 			this.dialog.close();
+
+			this.router.navigate(['/home']);
 
 		}, error => {
 			console.log(error);
