@@ -7,22 +7,22 @@ import { appRouter } from './app.routing';
 import { AppComponent } from './app.component';
 
 // Material 
-  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-  import { MatToolbarModule } from '@angular/material';
-  import { MatButtonModule }  from '@angular/material';
-  import { MatSidenavModule } from '@angular/material';
-  import { MatIconModule }    from '@angular/material';
-  import { MatListModule }    from '@angular/material';
-  import { MatCardModule }    from '@angular/material';
-  import { MatSelectModule }  from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material';
+import { MatSidenavModule } from '@angular/material';
+import { MatIconModule } from '@angular/material';
+import { MatListModule } from '@angular/material';
+import { MatCardModule } from '@angular/material';
+import { MatSelectModule } from '@angular/material';
 
 
 // Translate Service
 // https://medium.com/letsboot/translate-angular-4-apps-with-ngx-translate-83302fb6c10d
-  import { TranslateModule } from '@ngx-translate/core';
-  import { TranslateLoader } from '@ngx-translate/core';
-  import { HttpClientModule, HttpClient } from '@angular/common/http';
-  import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // AoT requires an exported function for factories
 export function HttpLoaderFactory(http: HttpClient) {
@@ -31,44 +31,44 @@ export function HttpLoaderFactory(http: HttpClient) {
 
 // Components
 
-  import { NavComponent } from './components/nav/nav.component';
+import { NavComponent } from './components/nav/nav.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavComponent
-  ],
-  imports: [
-    BrowserModule,
-    CommonModule,
-    HttpClientModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
-    MatCardModule,
-    MatSelectModule,
-    // SharedModule,
-    TranslateModule.forRoot({
-        loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient]
-        }
-    }),
-    appRouter,
-    BrowserAnimationsModule
-  ],
-  exports: [
-    NavComponent
-  ],
-  providers: [],
-  bootstrap: [
-    AppComponent
-  ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ]
+    declarations: [
+        AppComponent,
+        NavComponent
+    ],
+    imports: [
+        BrowserModule,
+        CommonModule,
+        HttpClientModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatIconModule,
+        MatListModule,
+        MatCardModule,
+        MatSelectModule,
+        // SharedModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: HttpLoaderFactory,
+                deps: [HttpClient]
+            }
+        }),
+        appRouter,
+        BrowserAnimationsModule
+    ],
+    exports: [
+        NavComponent
+    ],
+    providers: [],
+    bootstrap: [
+        AppComponent
+    ],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA
+    ]
 })
-export class AppModule { }
+export class AppModule {}

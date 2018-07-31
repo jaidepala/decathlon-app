@@ -15,8 +15,12 @@ export const router: Routes = [
 		loadChildren: '../app/modules/home/home.module#HomeModule'
 	},
 	{
+		path: 'home/:category',
+		loadChildren: '../app/modules/category/category.module#CategoryModule'
+	},
+	{
 		path: '',
-		redirectTo: '',
+		redirectTo: '/home',
 		pathMatch: 'full'
 	}
 ];

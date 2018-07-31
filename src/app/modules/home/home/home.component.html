@@ -1,3 +1,54 @@
-<p>
-  home works!
-</p>
+<mat-card>
+	<div  class="swiper-container" [swiper]="config">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+					<img src="https://i.imgur.com/Qq5AzKI.jpg" />
+			</div>
+			<div class="swiper-slide">
+					<img src="https://i.imgur.com/fmQ1h8x.jpg" />
+			</div>
+			<div class="swiper-slide">
+					<img src="https://i.imgur.com/jZi52BC.jpg" />
+			</div>
+			<div class="swiper-slide">
+					<img src="https://i.imgur.com/kfcSNII.jpg" />
+			</div>
+		</div>
+
+		<div class="swiper-scrollbar"></div>
+		<div class="swiper-pagination"></div>
+
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</div>
+	<mat-grid-list cols="2" rowHeight="2:1">
+		<mat-grid-tile>
+			<a routerLink="/home/exercise">
+				<mat-icon cdk-visually-hidden>
+					accessibility_new
+				</mat-icon>
+			</a>
+		</mat-grid-tile>
+		<mat-grid-tile>
+			<a routerLink="/home/rowing">
+				<mat-icon cdk-visually-hidden>
+					rowing
+				</mat-icon>
+			</a>
+		</mat-grid-tile>
+		<mat-grid-tile>
+			<a routerLink="/home/material">
+				<mat-icon cdk-visually-hidden>
+					grain
+				</mat-icon>
+			</a>
+		</mat-grid-tile>
+		<mat-grid-tile>
+			<a routerLink="/home/walk">
+				<mat-icon cdk-visually-hidden>
+					directions_walk
+				</mat-icon>
+			</a>
+		</mat-grid-tile>
+	</mat-grid-list>
+</mat-card>

@@ -2,29 +2,43 @@ import { NgModule } from '@angular/core';
 
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
+import { MatDialogModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 import { FormsModule } from '@angular/forms';
-// import { CustomerComponent } from './customer.component';
+import { OverlaySpinnerComponent } from './components/overlay-spinner/overlay-spinner.component';
 // import { NewItemDirective } from './new-item.directive';
 // import { OrdersPipe } from './orders.pipe';
 
+import { ApiService } from './services/api.service';
+
 @NgModule({
-  	imports: [
-  		CommonModule,
-  		TranslateModule
-	],
-  	declarations: [
-  		// CustomerComponent, 
-  		// NewItemDirective, 
-  		// OrdersPipe
-	],
-  	exports: [
-  		// CustomerComponent, 
-  		// NewItemDirective, 
-  		// OrdersPipe,
-    	CommonModule, 
-    	FormsModule,
-    	TranslateModule
-  	]
+    imports: [
+        CommonModule,
+        MatDialogModule,
+        MatProgressSpinnerModule,
+        TranslateModule
+    ],
+    declarations: [
+        OverlaySpinnerComponent,
+        // NewItemDirective, 
+        // OrdersPipe
+    ],
+    providers: [
+        ApiService
+    ],
+    exports: [
+        OverlaySpinnerComponent,
+        // NewItemDirective, 
+        // OrdersPipe,
+        CommonModule,
+        MatDialogModule,
+        MatProgressSpinnerModule,
+        FormsModule,
+        TranslateModule
+    ],
+    entryComponents: [
+        OverlaySpinnerComponent
+    ]
 })
 export class SharedModule {}
