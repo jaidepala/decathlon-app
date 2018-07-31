@@ -2,6 +2,16 @@
 	"APP": {
 		"NAME": "डेकाथलन"
 	},
+	"LOGIN": {
+		"ENTER_USERNAME": "उपयोगकर्ता नाम दर्ज करें",
+		"ENTER_PASSWORD": "पास वर्ड दर्ज करें",
+		"USERNAME": "उपयोगकर्ता नाम",
+		"PASSWORD": "पारण शब्द",
+		"NO_USERNAME": "कृपया उपयोगकर्ता नाम दर्ज करें",
+		"NO_PASSWORD": "कृप्या पास्वर्ड भरो",
+		"CLOSE": "बंद करे",
+		"DONE": "कृत"
+	},
 	"DRAWER": {
 		"MENU": "मेन्यू",
 		"TOGGLE_NAVIGATION": "नेविगेशन को टॉगल करें",

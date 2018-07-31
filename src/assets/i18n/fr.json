@@ -2,6 +2,16 @@
 	"APP": {
 		"NAME": "Décathlon"
 	},
+	"LOGIN": {
+		"ENTER_USERNAME": "Saisissez votre nom d'utilisateur",
+		"ENTER_PASSWORD": "Entrer le mot de passe",
+		"USERNAME": "Nom d'utilisateur",
+		"PASSWORD": "Mot de passe",
+		"NO_USERNAME": "S'il vous plaît entrer le nom d'utilisateur",
+		"NO_PASSWORD": "Veuillez entrer le mot de passe",
+		"CLOSE": "Fermer",
+		"DONE": "Terminé"
+	},
 	"DRAWER": {
 		"MENU": "Menu",
 		"TOGGLE_NAVIGATION": "Basculer la navigation",
