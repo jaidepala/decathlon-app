@@ -14,8 +14,10 @@
         "@ngx-translate/core": "^10.0.2",
         "@ngx-translate/http-loader": "^3.0.1",
         "core-js": "^2.5.4",
+        "express": "^4.16.3",
         "ngx-swiper-wrapper": "^6.3.0",
         "npm": "^6.2.0",
+        "path": "^0.12.7",
         "rxjs": "^6.2.2",
         "zone.js": "~0.8.26"
     },
@@ -28,6 +30,7 @@
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "~8.9.4",
         "codelyzer": "~4.2.1",
+        "enhanced-resolve": "^3.3.0",
         "jasmine-core": "~2.99.1",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~1.7.1",
@@ -40,18 +43,22 @@
         "tslint": "~5.9.1",
         "typescript": "~2.7.2"
     },
+    "engines": {
+        "node": "8.11.3",
+        "npm": "5.6.0"
+    },
     "name": "decathlon-app",
     "private": true,
     "scripts": {
         "build": "ng build",
         "heroku-prebuild": "echo This runs before Heroku installs your dependencies.",
         "heroku-postbuild": "echo This runs afterwards.",
-        "postinstall": "echo Post Install executed",
+        "postinstall": "ng build --aot --prod",
         "e2e": "ng e2e",
         "lint": "ng lint",
         "ng": "ng",
-        "start": "ng serve",
+        "start": "node server.js",
         "test": "ng test"
     },
-    "version": "1.0.1"
+    "version": "1.0.2"
 }
