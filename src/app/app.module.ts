@@ -7,14 +7,15 @@ import { appRouter } from './app.routing';
 import { AppComponent } from './app.component';
 
 // Material 
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material';
-import { MatButtonModule } from '@angular/material';
-import { MatSidenavModule } from '@angular/material';
-import { MatIconModule } from '@angular/material';
-import { MatListModule } from '@angular/material';
-import { MatCardModule } from '@angular/material';
-import { MatSelectModule } from '@angular/material';
+    import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+    import { MatToolbarModule } from '@angular/material';
+    import { MatButtonModule } from '@angular/material';
+    import { MatSidenavModule } from '@angular/material';
+    import { MatIconModule } from '@angular/material';
+    import { MatListModule } from '@angular/material';
+    import { MatCardModule } from '@angular/material';
+    import { MatSelectModule } from '@angular/material';
+    import { MatMenuModule } from '@angular/material';
 
 
 // Translate Service
@@ -49,6 +50,7 @@ import { NavComponent } from './components/nav/nav.component';
         MatListModule,
         MatCardModule,
         MatSelectModule,
+        MatMenuModule,
         // SharedModule,
         TranslateModule.forRoot({
             loader: {

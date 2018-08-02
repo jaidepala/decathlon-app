@@ -1,50 +1,103 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport="true"
-    [attr.role]="'dialog'"
-    [mode]="'over'">
-    <!-- [opened]="!(isHandset$ | async)"> -->
-    <!-- [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" -->
-    <!-- [mode]="(isHandset$ | async) ? 'over' : 'side'" -->
-    <mat-toolbar color="primary">
-        {{ 'DRAWER.MENU' | translate }}
-    </mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item (click)="drawer.toggle()" routerLink="/login">
-        {{ 'DRAWER.LOGIN' | translate }}
-        </a>
-      <a mat-list-item (click)="drawer.toggle()" routerLink="/home">
-        {{ 'DRAWER.HOME' | translate }}
-        </a>
-    </mat-nav-list>
-    <mat-form-field>
-      <mat-select [(value)]="currentLanguage" (selectionChange)="changeLanguage( $event.value )">
-        <mat-option value="en"> English </mat-option>
-        <mat-option value="hn"> Hindi </mat-option>
-        <mat-option value="fr"> French </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()">
-        <!-- *ngIf="isHandset$ | async"> -->
-        <mat-icon aria-label="{{ 'DRAWER.TOGGLE_NAVIGATION' | translate}}">
-            menu
-        </mat-icon>
-      </button>
-      <span>
-        {{ 'APP.NAME' | translate }}
-      </span>
-    </mat-toolbar>
-    <!-- Add Content Here -->
+    <mat-sidenav 
+        #drawer 
+        class="sidenav" 
+        fixedInViewport="true" 
+        [attr.role]="'dialog'" 
+        [mode]="'over'">
 
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
+        <!-- [opened]="!(isHandset$ | async)"> -->
+        <!-- [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" -->
+        <!-- [mode]="(isHandset$ | async) ? 'over' : 'side'" -->
+        
+        <mat-toolbar color="primary">
+            {{ 'DRAWER.MENU' | translate }}
+        </mat-toolbar>
+        <mat-nav-list>
+        <a mat-list-item (click)="drawer.toggle()" routerLink="/login">
+            {{ 'DRAWER.LOGIN' | translate }}
+        </a>
+        <a mat-list-item (click)="drawer.toggle()" routerLink="/home">
+            {{ 'DRAWER.HOME' | translate }}
+        </a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+                <!-- *ngIf="isHandset$ | async"> -->
+                <mat-icon aria-label="{{ 'DRAWER.TOGGLE_NAVIGATION' | translate}}">
+                    menu
+                </mat-icon>
+            </button>
+            <span>
+                {{ 'APP.NAME' | translate }}
+            </span>
+
+            <span class="nav-spacer"></span>
+
+            <button mat-button [matMenuTriggerFor]="animals">
+                <mat-icon class="nav-icon">favorite</mat-icon>
+            </button>
+
+            <mat-menu #animals="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+                <button mat-menu-item [matMenuTriggerFor]="language">Select Language</button>
+            </mat-menu>
+
+            <mat-menu #language="matMenu">
+              <button 
+                        mat-menu-item 
+                        (click)="changeLanguage( 'en' )">
+                        English
+                </button>
+              <button 
+                        mat-menu-item 
+                        (click)="changeLanguage( 'hn' )">
+                        Hindi
+                </button>
+              <button 
+                        mat-menu-item 
+                        (click)="changeLanguage( 'fr' )">
+                        French
+                </button>
+            </mat-menu>
+
+            <mat-menu #invertebrates="matMenu">
+                <button mat-menu-item [matMenuTriggerFor]="fish">Insects</button>
+                <button mat-menu-item [matMenuTriggerFor]="amphibians">Molluscs</button>
+                <button mat-menu-item [matMenuTriggerFor]="reptiles">Crustaceans</button>
+                <button mat-menu-item>Corals</button>
+                <button mat-menu-item>Arachnids</button>
+                <button mat-menu-item>Velvet worms</button>
+                <button mat-menu-item>Horseshoe crabs</button>
+            </mat-menu>
+
+            <mat-menu #fish="matMenu">
+                <button mat-menu-item>Baikal oilfish</button>
+                <button mat-menu-item>Bala shark</button>
+                <button mat-menu-item>Ballan wrasse</button>
+                <button mat-menu-item>Bamboo shark</button>
+                <button mat-menu-item>Banded killifish</button>
+            </mat-menu>
+
+            <mat-menu #amphibians="matMenu">
+                <button mat-menu-item>Sonoran desert toad</button>
+                <button mat-menu-item>Western toad</button>
+                <button mat-menu-item>Arroyo toad</button>
+                <button mat-menu-item>Yosemite toad</button>
+            </mat-menu>
+
+            <mat-menu #reptiles="matMenu">
+                <button mat-menu-item>Banded Day Gecko</button>
+                <button mat-menu-item>Banded Gila Monster</button>
+                <button mat-menu-item>Black Tree Monitor</button>
+                <button mat-menu-item>Blue Spiny Lizard</button>
+                <button mat-menu-item disabled>Velociraptor</button>
+            </mat-menu>
+
+        </mat-toolbar>
+        <!-- Add Content Here -->
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

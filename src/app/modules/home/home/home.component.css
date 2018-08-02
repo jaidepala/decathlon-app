@@ -1,3 +1,4 @@
 @import '~swiper/dist/css/swiper.min.css';
 
-.swiper-slide img { width: 100%; }
+.swiper-slide { width: 100%; max-height: 400px; text-align: center; }
+/*.swiper-slide img { width: 100%; }*/
